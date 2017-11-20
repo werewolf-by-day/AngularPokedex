@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { ApiserviceService } from './apiservice.service';
 
-import { AppRoutingModule } from './app-routing.module';
+import { routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { KantoComponent } from './kanto/kanto.component';
 import { JohtoComponent } from './johto/johto.component';
@@ -28,9 +31,11 @@ import { EvolutionsComponent } from './evolutions/evolutions.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    routing,
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ApiserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
