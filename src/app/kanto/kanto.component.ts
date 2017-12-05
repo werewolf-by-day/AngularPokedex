@@ -26,14 +26,14 @@ export class KantoComponent implements OnInit {
   constructor(private _apiserviceService: ApiserviceService) { }
 
   ngOnInit() {
-  	this.pokemon = this._apiserviceService.getPokemon('gen1')
+  	this.pokemon = this._apiserviceService.getPokemon(1)
   	.then( pokemon => {
   		console.log(pokemon)
-  	this.html_string = "";
-      for(var i = 1; i <= 151; i++) {
-        this.html_string += '<img id="' +  [i]  + '" src="http://pokeapi.co/media/img/' + [i] + '.png" alt="">';      
-      }
-    $("#container").html(this.html_string);  
+  	// this.html_string = "";
+   //    for(var i = 1; i <= 151; i++) {
+   //      this.html_string += '<img id="' +  [i]  + '" src="http://pokeapi.co/media/img/' + [i] + '.png" alt="">';      
+   //    }
+   //  $("#container").html(this.html_string);  
 
   	});
   }
